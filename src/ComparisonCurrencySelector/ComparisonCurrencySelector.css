@@ -1,0 +1,14 @@
+.search-result-button {
+    display: block;
+}
+.comp{
+    background-color: aqua;
+}
+.comp-currency-selector {
+    /* display: grid; */
+}
+.search-result-container {
+    width: max-content;
+    height: 20rem;
+    overflow-y: scroll;
+}

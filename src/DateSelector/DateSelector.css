@@ -1,0 +1,14 @@
+label {
+    display: block;
+    margin: 0 10px;
+    padding: 5px;
+    background-color: gainsboro;
+}
+.date-selector {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.date-selector input {
+    margin-left: 5px;
+}

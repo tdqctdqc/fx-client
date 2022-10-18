@@ -1,0 +1,9 @@
+.base-selector {
+    display: grid;
+}
+.search-result-container {
+    width: 100%;
+}
+.base-option {
+    background-color: aqua;
+}

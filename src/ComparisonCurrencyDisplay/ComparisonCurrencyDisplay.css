@@ -1,0 +1,22 @@
+.comp-display {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    align-content: start;
+    max-width: 500px;
+}
+.comp-display-card {
+    background-color: gray;
+    color: white;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 1px 5px 1px 1px;
+}
+.comp-display-card button {
+    background: none;
+    border: none;
+    color: white;
+}
+.comp-display-card button:hover {
+    color: black;
+}

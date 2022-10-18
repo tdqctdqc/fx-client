@@ -1,38 +1,33 @@
+* {
+    box-sizing: border-box;
+    background-color: gainsboro;
+}
+.chart-card {
+    min-width: 300px;
+    max-width: 1280px;
+    display: grid;
+}
+option {
+    background-color: white;
+}
 .App {
-  text-align: center;
+    display: grid;
+    justify-content: center;
+}
+.input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: left;
+    margin-bottom: 20px;
+    padding: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.comp-currency {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.comp-currency button {
+    margin: 0 5px 0 0;
 }
