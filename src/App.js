@@ -35,9 +35,9 @@ function App() {
       setLoading(true);
       const fetchedCurr = baseCurr;
       const rates = await getExchangeRatesBackFromDate(baseCurr, compCurrs, dates);
+      setLoading(false);
       setCompCurrRates(rates);
       console.log('fetched for ' + fetchedCurr);
-      setLoading(false);
     };
     get();
   }, [compCurrs, dates, baseCurr]);

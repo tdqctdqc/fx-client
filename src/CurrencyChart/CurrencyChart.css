@@ -9,5 +9,13 @@
 }
 
 .greyed {
-    opacity: 0.25;
+    opacity: 0.5;
+}
+
+.greyed:before {
+    position: absolute;
+    content: "Loading...";
+    z-index: 100;
+    top: 0;
+    left: 0;
 }

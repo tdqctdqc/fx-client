@@ -32,6 +32,7 @@ const colors = [
   'rgb(0, 0, 100)',
 ];
 
+
 function CurrencyChart( { baseCurrency, dates, 
   comparisonCurrencies, arrRates, loading } ) {
   
@@ -49,6 +50,12 @@ function CurrencyChart( { baseCurrency, dates,
       return compCurrData;
     })
   };
+  const blankData = {
+    labels: dates,
+    datasets: comparisonCurrencies.map((compCurr, index) => {
+      return { label: '', data: [] };
+    })
+  };
 
   const options = {
     responsive: true,
@@ -62,6 +69,18 @@ function CurrencyChart( { baseCurrency, dates,
       },
     },
   };
+  const blankOptions = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'top'
+      },
+      title: {
+        display: true,
+        text: `Loading...`,
+      },
+    },
+  };
   if(loading === false) {
     return (
         <div className='chart'> 
@@ -70,8 +89,8 @@ function CurrencyChart( { baseCurrency, dates,
     );
   }
   return(
-    <div className='chart greyed'> 
-            <Line options={options} data={data} /> 
+    <div> 
+            <Line options={blankOptions} data={blankData} className="greyed" /> 
     </div>
   );
   
