@@ -26,18 +26,18 @@ function App() {
   const [compCurrRates, setCompCurrRates] = useState([]);
   const [dates, setDates] = useState([]);
 
+  const [loading, setLoading] = useState(false);
 
-  useEffect(()=> {
-
-  }, [])
 
 
   useEffect(() => {
     const get = async () => {
+      setLoading(true);
       const fetchedCurr = baseCurr;
       const rates = await getExchangeRatesBackFromDate(baseCurr, compCurrs, dates);
       setCompCurrRates(rates);
       console.log('fetched for ' + fetchedCurr);
+      setLoading(false);
     };
     get();
   }, [compCurrs, dates, baseCurr]);
@@ -61,12 +61,12 @@ function App() {
           <CurrencyChart baseCurrency={baseCurr}
             dates={dates} 
             comparisonCurrencies={compCurrs}
-            arrRates={compCurrRates}/>
+            arrRates={compCurrRates}
+            loading={loading}/>
           <DateSelector minDate={minDate}
             setDates={setDates}/>
         </div>
         <div className="input card">
-          
           <BaseCurrencySelector 
             select={setBaseCurr}
             baseCurrency={baseCurr}/>

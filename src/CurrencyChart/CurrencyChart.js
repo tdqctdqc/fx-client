@@ -32,7 +32,8 @@ const colors = [
   'rgb(0, 0, 100)',
 ];
 
-function CurrencyChart( { baseCurrency, dates, comparisonCurrencies, arrRates} ) {
+function CurrencyChart( { baseCurrency, dates, 
+  comparisonCurrencies, arrRates, loading } ) {
   
   useEffect(() => {
     console.log('chart rendering');
@@ -61,12 +62,19 @@ function CurrencyChart( { baseCurrency, dates, comparisonCurrencies, arrRates} )
       },
     },
   };
-
-  return (
-      <div className='chart'> 
-        <Line options={options} data={data} /> 
-      </div>
+  if(loading === false) {
+    return (
+        <div className='chart'> 
+          <Line options={options} data={data} /> 
+        </div>
+    );
+  }
+  return(
+    <div className='chart greyed'> 
+            <Line options={options} data={data} /> 
+    </div>
   );
+  
 }
 
 export default CurrencyChart;
